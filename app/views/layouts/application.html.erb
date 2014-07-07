@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Food</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id="wrapper">
+    <nav class="navbar navbar-inverse" role="navigation">
+      <!-- <%#= link_to('Home Page', root_path) %>
+      <span>&nbsp;|&nbsp;</span>
+      <%#= link_to('View Foods', food_path) %>
+      <span>&nbsp;|&nbsp;</span>
+      <%#= link_to('About', about_path) %>
+      <span>&nbsp;|&nbsp;</span> -->
+    </nav>
+
+    <section id="main-content">
+      <%= yield %>
+    </section>    
+  </div>
+</body>
+</html>
