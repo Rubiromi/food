@@ -9,17 +9,17 @@
 <body>
   <div id="wrapper">
     <nav class="navbar navbar-inverse" role="navigation">
-      <!-- <%#= link_to('Home Page', root_path) %>
+      <%= link_to('Home Page', root_path) %>
       <span>&nbsp;|&nbsp;</span>
-      <%#= link_to('View Foods', food_path) %>
+      <!-- <%#= link_to('View Foods', food_path) %> -->
+      <!-- <span>&nbsp;|&nbsp;</span>
+      <%#= link_to('About', about_path) %> -->
       <span>&nbsp;|&nbsp;</span>
-      <%#= link_to('About', about_path) %>
-      <span>&nbsp;|&nbsp;</span> -->
     </nav>
 
     <section id="main-content">
       <%= yield %>
-    </section>    
+    </section>
   </div>
 </body>
 </html>
