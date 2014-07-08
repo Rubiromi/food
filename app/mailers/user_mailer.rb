@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default from: "no-reply@myapp.co.uk.de.yo.ninja"
+  default from: "no-reply@arcane-meadow-5019.herokuapp.com"
 
   def welcome(user_email)
     @user_email = user_email
