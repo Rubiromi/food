@@ -16,6 +16,10 @@ gem 'coffee-rails', '~> 4.0.0'
 # gem 'therubyracer',  platforms: :ruby
 
 gem 'bootstrap-sass'
+gem 'font-awesome-sass'
+gem 'mini_magick'
+gem 'carrierwave' #used for file uplards
+
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

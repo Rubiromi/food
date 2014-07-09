@@ -1,5 +1,6 @@
 class NomsController < ApplicationController
   before_action :set_nom, only: [:show, :edit, :update, :destroy]
+  before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
 
   # GET /noms
   # GET /noms.json
@@ -10,6 +11,7 @@ class NomsController < ApplicationController
   # GET /noms/1
   # GET /noms/1.json
   def show
+    @nom = Nom.find(params[:id])
   end
 
   # GET /noms/new
@@ -67,8 +69,12 @@ class NomsController < ApplicationController
       @nom = Nom.find(params[:id])
     end
 
+    def set_restaurant
+      @restaurant = Restaurant.find(restaurant[:id])
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def nom_params
-      params[:nom]
+      params.require(:nom).permit(:name, :delicious)
     end
 end

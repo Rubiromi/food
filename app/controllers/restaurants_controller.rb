@@ -10,6 +10,7 @@ class RestaurantsController < ApplicationController
   # GET /restaurants/1
   # GET /restaurants/1.json
   def show
+    @restaurant = Restaurant.find(params[:id])
   end
 
   # GET /restaurants/new
@@ -17,12 +18,6 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.new
   end
 
-  # GET /restaurants/1/edit
-  def edit
-  end
-
-  # POST /restaurants
-  # POST /restaurants.json
   def create
     @restaurant = Restaurant.new(restaurant_params)
 
@@ -35,6 +30,11 @@ class RestaurantsController < ApplicationController
         format.json { render json: @restaurant.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  # GET /restaurants/1/edit
+  def edit
+    @restaurant = Restaurant.find(params[:id])
   end
 
   # PATCH/PUT /restaurants/1
@@ -69,6 +69,6 @@ class RestaurantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def restaurant_params
-      params[:restaurant]
+      params.require(:restaurant).permit(:name, :address, :logo)
     end
 end

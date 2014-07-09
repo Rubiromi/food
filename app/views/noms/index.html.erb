@@ -10,6 +10,9 @@
   <tbody>
     <% @noms.each do |nom| %>
       <tr>
+        <td><%= nom.name %></td>
+        <td><%= nom.delicious %></td>
+        <td><%#= link_to("View #{}") %></td>
         <td><%= link_to 'Show', nom %></td>
         <td><%= link_to 'Edit', edit_nom_path(nom) %></td>
         <td><%= link_to 'Destroy', nom, method: :delete, data: { confirm: 'Are you sure?' } %></td>
